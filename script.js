@@ -1,4 +1,4 @@
-console.log("O JAVASCRIP ESTA FUNCIONANDO");
+console.log("ESTA FUNCIONANDO");
 
 //selecioanndo o H1
 const titulo = document.querySelector("h1");
