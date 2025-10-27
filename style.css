@@ -100,11 +100,11 @@ nav ul li a:hover{
 }    
 
 .about-content img {
-    object-fit: cover;
+    
     width: 150px;
     height: 150px;
     border-radius: 50%; /* Isso faz o círculo */
-    
+    object-fit: cover;
     float: right;
 }
 
