@@ -105,7 +105,7 @@ nav ul li a:hover{
     border-radius: 50%; /*transforma a imagem em uma bola*/
     object-fit: cover; /*Garante que a imagem preencha o circulo sem distorcer*/
     float: left; /*faz a imagem flutuar para a esquerda*/
-    margin-right: 15px;
+    margin-right: 10px;
     margin-bottom: 15px;
 }
 
