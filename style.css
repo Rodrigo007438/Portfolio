@@ -91,9 +91,11 @@ nav ul li a:hover{
     display: block;
 }
 
+/*Sobre mim*/
 
 
 .about-content img{
+    align-items: center;
     width: 150px;
     height: 150px;
     border-radius: 50%; /*transforma a imagem em uma bola*/
