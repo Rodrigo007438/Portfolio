@@ -1,5 +1,5 @@
 body{
-    background-color: #f4f4f4;
+    background-color: #bfedff;
     color: #333;
 
     /*Tipografia*/
@@ -23,7 +23,7 @@ header,
 section,
 footer,
 nav{
-    background-color: #c5edff;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 5px; /*adiciona bordas arredondadas*/
 
