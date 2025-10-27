@@ -99,6 +99,13 @@ nav ul li a:hover{
     margin-top: 20px;
 }
 
+.about-content img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /*transforma a imagem em uma bola*/
+    object-fit: cover; /*Garante que a imagem preencha o circulo sem distorcer*/
+}
+
 /*formulario*/
 form div{
     margin-bottom: 15px;
