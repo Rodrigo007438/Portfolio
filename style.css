@@ -92,14 +92,21 @@ nav ul li a:hover{
 }
 
 /*Sobre mim*/
-
+.about-content{
+    display: flex;
+    align-items: flex-start; /*alinha os itens verticalmente no centro*/
+    gap: 20px;
+    margin-top: 20px;
+}
 
 .about-content img{
-    align-items: center;
     width: 150px;
     height: 150px;
     border-radius: 50%; /*transforma a imagem em uma bola*/
     object-fit: cover; /*Garante que a imagem preencha o circulo sem distorcer*/
+    float: left; /*faz a imagem flutuar para a esquerda*/
+    margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 /*formulario*/
