@@ -92,21 +92,20 @@ nav ul li a:hover{
 }
 
 /*Sobre mim*/
-.about-content{
+.about-content {
     display: flex;
-    align-items: flex-start; /*alinha os itens verticalmente no centro*/
+    align-items: center; /* Alinha o texto no meio da imagem */
     gap: 20px;
     margin-top: 20px;
-    object-fit: cover; /*Garante que a imagem preencha o circulo sem distorcer*/
-}
+}    
 
-.about-content img{
+.about-content img {
+    object-fit: cover;
     width: 150px;
     height: 150px;
-    border-radius: 50%; /*transforma a imagem em uma bola*/
+    border-radius: 50%; /* Isso faz o círculo */
     
-    float: left; /*faz a imagem flutuar para a esquerda*/
-    
+    float: right;
 }
 
 /*formulario*/
