@@ -101,10 +101,3 @@ if (modalOverlay) {
     });
 }
 
-// 4. (BÔNUS) Impede o modal de fechar ao clicar NA FOTO GRANDE
-if (bigModalImage) {
-    bigModalImage.addEventListener('click', (event) => {
-        event.stopPropagation(); 
-    });
-}
-
