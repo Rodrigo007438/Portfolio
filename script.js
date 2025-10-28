@@ -78,7 +78,8 @@ window.addEventListener('scroll', fixNav);
 
 //Codigo para foto ficar grande
 const profilePic = document.querySelector("#profile-pic");
-const modalOverlay = document.querySelector("#modalOverlay");
+const modalOverlay = document.querySelector("#modal-overlay");
+const bigModalImage = document.querySelector("#modal-image");
 
 profilePic.addEventListener('click', () =>{
     modalOverlay.classList.remove('modal-hidden');
@@ -87,3 +88,7 @@ profilePic.addEventListener('click', () =>{
 modalOverlay.addEventListener('click', () =>{
     modalOverlay.classList.add('modal-hidden');
 })
+
+bigModalImage.addEventListener('click', (event) => {
+    event.stopPropagation(); // Impede o clique de "borbulhar" para o overlay
+});
