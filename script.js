@@ -77,7 +77,7 @@ function fixNav() {
 window.addEventListener('scroll', fixNav);
 
 //Codigo para foto ficar grande
-const profilePic = document.querySelector("#profilePic");
+const profilePic = document.querySelector("#profile-pic");
 const modalOverlay = document.querySelector("#modalOverlay");
 
 profilePic.addEventListener('click', () =>{
@@ -85,5 +85,5 @@ profilePic.addEventListener('click', () =>{
 })
 
 modalOverlay.addEventListener('click', () =>{
-    modalOverlay.addEventListener('modal-hidden');
+    modalOverlay.classList.add('modal-hidden');
 })
