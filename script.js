@@ -1,72 +1,110 @@
-console.log("ESTÁ FUNCIONANDO");
+console.log("ESTA FUNCIONANDO");
 
-// Clique no título
+//selecioanndo o H1
 const titulo = document.querySelector("h1");
-titulo.addEventListener("click", () => {
-    console.log("Clicou no título");
+
+//quando clicar no titulo uma função anonima vai acontecer
+titulo.addEventListener('click', () => {
+    console.log("Clicou no titulo");
     titulo.textContent = "Você clicou!";
 });
 
-// Formulário
-const formContato = document.querySelector("form");
-formContato.addEventListener("submit", (event) => {
+/*selecionando formulário*/
+const formContato = document.querySelector('form');
+
+/*recebendo parametro event*/
+formContato.addEventListener('submit', (event) => {
+
+    /*impede o carregamento*/
     event.preventDefault();
 
-    const nome = document.querySelector("#nome").value;
-    const email = document.querySelector("#email").value;
-    const mensagem = document.querySelector("#mensagem").value;
+    /*selecionando campode input*/
+    const inputNome = document.querySelector('#nome');
+    const inputEmail = document.querySelector('#email');
+    const inputMensagem = document.querySelector('#mensagem');
 
-    console.log("---DADOS DO FORMULÁRIO---");
-    console.log("Nome:", nome);
+    /*pega o valor(value) de cada campo*/
+    const nome = inputNome.value;
+    const email = inputEmail.value;
+    const mensagem = inputMensagem.value;
+
+    /*mostra od dados do formmulario na tela*/
+    console.log("---DADOS DO FOUMÁRIO---");
+    console.log("Nome do Usuário:", nome);
     console.log("Email:", email);
     console.log("Mensagem:", mensagem);
 
-    alert("MENSAGEM ENVIADA COM SUCESSO!");
+    /*Avisa sobre envio*/
+    alert("MENSAGEM ENVIADA COM SUCESSO!!");
+    
+    inputNome.value ="";
+    inputEmail.value ="";
+    inputMensagem.value ="";
+})
 
-    document.querySelector("#nome").value = "";
-    document.querySelector("#email").value = "";
-    document.querySelector("#mensagem").value = "";
-});
+// 1. Seleciona os elementos
+const nav = document.querySelector('nav');
+const placeholder = document.querySelector('#nav-placeholder'); // Seleciona o placeholder
 
-// Menu fixo
-const nav = document.querySelector("nav");
-const placeholder = document.querySelector("#nav-placeholder");
-const navHeight = nav.offsetHeight;
-const navOffsetTop = nav.offsetTop;
+// 2. Guarda as medidas (só precisa ser feito uma vez)
+const navHeight = nav.offsetHeight; // (Corrigi seu 'navHeigth' para 'navHeight')
+const navOffsetTop = nav.offsetTop; // (Corrigi seu 'navOffSetTop' para 'navOffsetTop')
 
+// 3. função rolagem
 function fixNav() {
     if (window.scrollY >= navOffsetTop) {
-        nav.classList.add("nav-sticky");
-        placeholder.style.height = navHeight + "px";
+        // Se a rolagem passou do menu...
+
+        // 1. Gruda o menu
+        nav.classList.add('nav-sticky');
+        
+        // 2. Ativa o placeholder com a altura exata do menu
+        //    (Isto evita o 'pulo' do conteúdo)
+        placeholder.style.height = navHeight + 'px';
+
     } else {
-        nav.classList.remove("nav-sticky");
+        // Se a rolagem voltou para o topo...
+
+        // 1. Solta o menu
+        nav.classList.remove('nav-sticky');
+        
+        // 2. Desativa o placeholder
         placeholder.style.height = 0;
     }
 }
-window.addEventListener("scroll", fixNav);
 
-// Modal da foto
-const profilePic = document.querySelector("#profile-pic");
-const modalOverlay = document.querySelector("#modal-overlay");
-const bigModalImage = document.querySelector("#modal-image");
+// 4. "Ouve" o evento de scroll
+window.addEventListener('scroll', fixNav);
 
-// Abre o modal ao clicar na foto
+//Codigo para foto ficar grande
+/* --- CÓDIGO DO MODAL DA FOTO DE PERFIL (CORRIGIDO) --- */
+
+// 1. Seleciona os elementos
+const profilePic = document.querySelector("#profile-pic"); // A foto PEQUENA
+const modalOverlay = document.querySelector("#modal-overlay");   // O fundo preto
+const bigModalImage = document.querySelector("#modal-image");   // A foto GRANDE
+
+// 2. Quando clicar na foto PEQUENA, ABRE o modal
+// (Verificamos se o elemento existe)
 if (profilePic) {
-    profilePic.addEventListener("click", () => {
-        modalOverlay.classList.remove("modal-hidden");
+    profilePic.addEventListener('click', () => { // <-- CORRIGIDO AQUI
+        if (modalOverlay) {
+            modalOverlay.classList.remove('modal-hidden');
+        }
     });
 }
 
-// Fecha o modal ao clicar no fundo
+// 3. Quando clicar no FUNDO PRETO, FECHA o modal
 if (modalOverlay) {
-    modalOverlay.addEventListener("click", () => {
-        modalOverlay.classList.add("modal-hidden");
+    modalOverlay.addEventListener('click', () => {
+        modalOverlay.classList.add('modal-hidden');
     });
 }
 
-// Impede fechar ao clicar na imagem grande
+// 4. (BÔNUS) Impede o modal de fechar ao clicar NA FOTO GRANDE
 if (bigModalImage) {
-    bigModalImage.addEventListener("click", (event) => {
-        event.stopPropagation();
+    bigModalImage.addEventListener('click', (event) => {
+        event.stopPropagation(); 
     });
 }
+
