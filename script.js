@@ -77,18 +77,33 @@ function fixNav() {
 window.addEventListener('scroll', fixNav);
 
 //Codigo para foto ficar grande
-const profilePic = document.querySelector("#profile-pic");
-const modalOverlay = document.querySelector("#modal-overlay");
-const bigModalImage = document.querySelector("#modal-image");
+/* --- CÓDIGO DO MODAL DA FOTO DE PERFIL (CORRIGIDO) --- */
 
-profilePic.addEventListener('click', () =>{
-    modalOverlay.classList.remove('modal-hidden');
-})
+// 1. Seleciona os elementos
+const profilePic = document.querySelector("#profile-pic"); // A foto PEQUENA
+const modalOverlay = document.querySelector("#modal-overlay");   // O fundo preto
+const bigModalImage = document.querySelector("#modal-image");   // A foto GRANDE
 
-modalOverlay.addEventListener('click', () =>{
-    modalOverlay.classList.add('modal-hidden');
-})
+// 2. Quando clicar na foto PEQUENA, ABRE o modal
+// (Verificamos se o elemento existe)
+if (profilePic) {
+    profilePic.addEventListener('click', () => { // <-- CORRIGIDO AQUI
+        if (modalOverlay) {
+            modalOverlay.classList.remove('modal-hidden');
+        }
+    });
+}
 
-bigModalImage.addEventListener('click', (event) => {
-    event.stopPropagation(); // Impede o clique de "borbulhar" para o overlay
-});
+// 3. Quando clicar no FUNDO PRETO, FECHA o modal
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', () => {
+        modalOverlay.classList.add('modal-hidden');
+    });
+}
+
+// 4. (BÔNUS) Impede o modal de fechar ao clicar NA FOTO GRANDE
+if (bigModalImage) {
+    bigModalImage.addEventListener('click', (event) => {
+        event.stopPropagation(); 
+    });
+}
