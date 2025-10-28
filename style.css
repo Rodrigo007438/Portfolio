@@ -1,61 +1,79 @@
-body {
+body{
     background-color: #bfedff;
     color: #333;
+
+    /*Tipografia*/
     font-family: Arial;
     line-height: 1.6;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-header, main, footer {
-    max-width: 900px;
-    margin: 20px auto;
+header,
+main,
+footer{
+    max-width: 900px; /*significa que a caixa terá no maximo 900 pixels*/
+    margin: 20px auto; /*20px nas laterais automatico em cima e em baixo*/
 }
 
-header, section, footer, nav {
+/*Cria cartões em banco na pagina*/
+header,
+section,
+footer,
+nav{
     background-color: #ffffff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 5px; /*adiciona bordas arredondadas*/
+
 }
 
-section {
+/*espaçar as sessões*/
+section{
     margin-bottom: 20px;
 }
 
-h1, h2 {
+/*Estilo do texto*/
+h1,h2{
     color: #222;
     margin-bottom: 10px;
 }
 
-p {
+p{
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /*Espaço abaixo do titulo*/
 }
 
-/* MENU */
-nav ul {
-    list-style-type: none;
+/*remover as bolinhas de listas de menu*/
+nav ul{
+    list-style-type: none; /*remove as bolinhas*/
     display: flex;
-    padding: 0;
+    padding: 0; /*remove o preenchimento padrão do HTML*/
     justify-content: center;
-    gap: 16px;
 }
 
-nav ul li a {
+/*coloca o menun lado a lado*/
+nav ul{
+    display: flex; 
+    gap: 16px; /*cria um espaço de 16px entre os topicos*/
+}
+
+/*estiliza os links do menu*/
+nav ul li a{
     text-decoration: none;
     color: #555;
-    font-weight: bold;
+    font-weight: bold; /*deixa a fonte em negrito*/
 }
 
-nav ul li a:hover {
+/*efeito visual ao passar o mouse*/
+nav ul li a:hover{
     color: #007BFF;
 }
 
-.nav-sticky {
+.nav-sticky{
     position: fixed;
-    top: 0;
+    top:0;
     left: 0;
     width: 100%;
     margin: 0;
@@ -64,54 +82,56 @@ nav ul li a:hover {
     z-index: 1000;
 }
 
-.nav-sticky ul {
+.nav-sticky ul{
     padding: 15px 0;
 }
 
-#nav-placeholder {
+#nav-placeholder{
     height: 0;
     display: block;
 }
 
-/* SOBRE MIM */
+/*Sobre mim*/
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: center; /* Alinha o texto no meio da imagem */
     gap: 20px;
     margin-top: 20px;
 }    
 
 .about-content img {
+    
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 50%; /* Isso faz o círculo */
     object-fit: cover;
     cursor: pointer;
 }
 
-/* FORMULÁRIO */
-form div {
+/*formulario*/
+form div{
     margin-bottom: 15px;
 }
 
-form label {
-    display: block;
+form label{
+    display: block; /*faz a label ocupar a linha inteira*/
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: bold; /*negrito*/
 }
 
 form input[type="text"],
 form input[type="email"],
-form textarea {
-    width: 100%;
-    padding: 10px;
+form textarea{
+    width: 100%; /*ocupa 100% de largura*/
+    padding: 10px; /*espaçamento interno para digitar*/
     border: 1px solid #ccc;
     border-radius: 5px;
+
     box-sizing: border-box;
 }
 
-/* BOTÃO */
-form button[type="submit"] {
+/*botão de envio*/
+form button[type="submit"]{
     width: 100%;
     padding: 15px;
     background-color: #007bff;
@@ -120,51 +140,49 @@ form button[type="submit"] {
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
+    cursor: pointer; /*muda o cursor para a mãozinha*/
 }
 
-form button[type="submit"]:hover {
-    background-color: #0056b3;
+/*muda o botão quando passar por cima*/
+form button[type="submit"]:hover{
+    background-color: #0056b3; /*quando passar o mouse por cima muda a cor do botão*/
 }
 
-/* RESPONSIVO */
-@media (max-width: 700px) {
-    .about-content {
+/*Regras de Respansividade (Media Queries)*/
+@media (max-width: 700px){
+    .about-content{
         flex-direction: column;
         align-items: center;
     }
 }
 
-/* MODAL */
-#modal-overlay {
-    display: none; /* <- inicia invisível */
+#modal-overlay{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
+
+    /*Centraliza a imagem no meio da tela*/
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
-    cursor: pointer;
+
+    z-index: 2000; /*Garante que fique na frente de tudo*/
+    cursor: pointer; /*mostra a mãozinha para fechar*/
 }
 
-/* Aparece somente quando a classe .modal-hidden for removida */
-#modal-overlay:not(.modal-hidden) {
-    display: flex;
-}
-
-/* Esconde o modal */
-.modal-hidden {
+/*Classe para esconder o modal*/
+#modal-overlay.modal-hidden{
     display: none;
 }
 
-/* Imagem grande */
-#modal-image {
+/*Fazer imagem grande dentro do modal*/
+#modal-image{
     max-width: 80%;
     max-height: 80%;
     border: 3px solid white;
     border-radius: 5px;
 }
+
