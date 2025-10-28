@@ -75,3 +75,15 @@ function fixNav() {
 
 // 4. "Ouve" o evento de scroll
 window.addEventListener('scroll', fixNav);
+
+//Codigo para foto ficar grande
+const profilePic = document.querySelector("#profilePic");
+const modalOverlay = document.querySelector("#modalOverlay");
+
+profilePic.addEventListener('click', () =>{
+    modalOverlay.classList.remove('modal-hidden');
+})
+
+modalOverlay.addEventListener('click', () =>{
+    modalOverlay.addEventListener('modal-hidden');
+})
