@@ -3,7 +3,7 @@ console.log("ESTA FUNCIONANDO");
 
 const titulo = document.querySelector("h1");
 
-/
+
 titulo.addEventListener('click', () => {
     console.log("Clicou no titulo");
     titulo.textContent = "Você clicou!";
