@@ -11,11 +11,11 @@ titulo.addEventListener('click', () => {
 
 
 
-const form = document.getElementById("my-form");
+const form = document.getElementById("meu_form");
 
 async function handleSubmit(event) {
     event.preventDefault(); // Impede o redirecionamento para a tela cinza
-    const status = document.getElementById("my-form-status");
+    const status = document.getElementById("meu_form-status");
     const data = new FormData(event.target);
 
     fetch(event.target.action, {
