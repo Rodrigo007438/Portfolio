@@ -13,34 +13,7 @@ titulo.addEventListener('click', () => {
 const formContato = document.querySelector('form');
 
 
-formContato.addEventListener('submit', (event) => {
 
-
-    event.preventDefault();
-
-  
-    const inputNome = document.querySelector('#nome');
-    const inputEmail = document.querySelector('#email');
-    const inputMensagem = document.querySelector('#mensagem');
-
-    
-    const nome = inputNome.value;
-    const email = inputEmail.value;
-    const mensagem = inputMensagem.value;
-
-
-    console.log("---DADOS DO FOUMÁRIO---");
-    console.log("Nome do Usuário:", nome);
-    console.log("Email:", email);
-    console.log("Mensagem:", mensagem);
-
-
-    alert("MENSAGEM ENVIADA COM SUCESSO!!");
-    
-    inputNome.value ="";
-    inputEmail.value ="";
-    inputMensagem.value ="";
-})
 
 
 const nav = document.querySelector('nav');
