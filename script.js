@@ -14,7 +14,7 @@ titulo.addEventListener('click', () => {
 const form = document.getElementById("meu_form");
 
 async function handleSubmit(event) {
-    event.preventDefault(); // Impede o redirecionamento para a tela cinza
+    event.preventDefault(); 
     const status = document.getElementById("meu_form-status");
     const data = new FormData(event.target);
 
@@ -26,11 +26,11 @@ async function handleSubmit(event) {
         }
     }).then(response => {
         if (response.ok) {
-            // SUCESSO!
+          
             alert("Obrigado! Sua mensagem foi enviada com sucesso.");
-            form.reset(); // Limpa os campos do formulário
+            form.reset(); 
         } else {
-            // ERRO!
+           
             response.json().then(data => {
                 if (Object.hasOwn(data, 'errors')) {
                     alert(data["errors"].map(error => error["message"]).join(", "));
