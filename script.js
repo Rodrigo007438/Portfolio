@@ -10,7 +10,6 @@ titulo.addEventListener('click', () => {
 });
 
 
-const formContato = document.querySelector('form');
 
 
 
