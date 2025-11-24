@@ -11,7 +11,40 @@ titulo.addEventListener('click', () => {
 
 
 
+const form = document.getElementById("my-form");
 
+async function handleSubmit(event) {
+    event.preventDefault(); // Impede o redirecionamento para a tela cinza
+    const status = document.getElementById("my-form-status");
+    const data = new FormData(event.target);
+
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            // SUCESSO!
+            alert("Obrigado! Sua mensagem foi enviada com sucesso.");
+            form.reset(); // Limpa os campos do formulário
+        } else {
+            // ERRO!
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    alert(data["errors"].map(error => error["message"]).join(", "));
+                } else {
+                    alert("Oops! Ocorreu um erro ao enviar o formulário.");
+                }
+            })
+        }
+    }).catch(error => {
+        alert("Oops! Ocorreu um erro ao enviar o formulário.");
+    });
+}
+
+form.addEventListener("submit", handleSubmit);
 
 
 
