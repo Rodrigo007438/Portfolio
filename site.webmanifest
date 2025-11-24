@@ -1,0 +1,8 @@
+{
+    "name": "Portfolio do Rodrigo",
+    "short_name": "RodrigoDev",
+    "icons": [],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
