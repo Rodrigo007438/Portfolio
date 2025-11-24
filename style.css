@@ -186,3 +186,49 @@ form button[type="submit"]:hover{
     border-radius: 5px;
 }
 
+
+.projeto-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px); /* Efeito de subir ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.projeto-card h3 {
+    color: #007BFF;
+    margin-top: 0;
+}
+
+.projeto-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-demo, .btn-code {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-demo {
+    background-color: #28a745; /* Verde para "Ver Online" */
+    color: white;
+}
+
+.btn-code {
+    background-color: #333; /* Preto para "GitHub" */
+    color: white;
+}
+
+.btn-demo:hover { background-color: #218838; }
+.btn-code:hover { background-color: #000; }
