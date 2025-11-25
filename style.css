@@ -1,136 +1,121 @@
-body{
+body {
     background-color: #b6e1f1;
     color: #333;
-
-  
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    margin: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
 header,
 main,
-footer{
-    max-width: 900px; 
-    margin: 20px auto; 
+footer {
+    max-width: 900px;
+    margin: 20px auto;
 }
 
 header,
 section,
 footer,
-nav{
+nav {
     background-color: #ffffff;
     padding: 20px;
-    border-radius: 5px; 
-
+    border-radius: 5px;
 }
 
-
-section{
+section {
     margin-bottom: 20px;
 }
 
-
-h1,h2{
+h1, h2 {
     color: #222;
     margin-bottom: 10px;
 }
 
-p{
+p {
     font-size: 16px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
-
-nav ul{
-    list-style-type: none; 
+nav ul {
+    list-style-type: none;
     display: flex;
-    padding: 0; 
+    padding: 0;
     justify-content: center;
-}
-
-
-nav ul{
-    display: flex; 
     gap: 16px;
 }
 
-
-nav ul li a{
+nav ul li a {
     text-decoration: none;
     color: #555;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-
-nav ul li a:hover{
+nav ul li a:hover {
     color: #007BFF;
 }
 
-.nav-sticky{
+.nav-sticky {
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     margin: 0;
     background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
-.nav-sticky ul{
+.nav-sticky ul {
     padding: 15px 0;
 }
 
-#nav-placeholder{
+#nav-placeholder {
     height: 0;
     display: block;
 }
 
-
 .about-content {
     display: flex;
-    align-items: center; 
+    align-items: center;
     margin-top: 20px;
-}    
+    gap: 20px;
+}
 
 .about-content img {
-    
     width: 100px;
     height: 100px;
-    border-radius: 50%; 
+    border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
     flex-shrink: 0;
 }
 
-
-form div{
+form div {
     margin-bottom: 15px;
 }
 
-form label{
-    display: block; 
+form label {
+    display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 form input[type="text"],
 form input[type="email"],
-form textarea{
-    width: 100%; 
-    padding: 10px; 
+form textarea {
+    width: 100%;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-
     box-sizing: border-box;
+    font-family: inherit;
 }
 
-
-form button[type="submit"]{
+form button[type="submit"] {
     width: 100%;
     padding: 15px;
     background-color: #007bff;
@@ -139,51 +124,37 @@ form button[type="submit"]{
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer; 
+    cursor: pointer;
+}
 
-
-form button[type="submit"]:hover{
+form button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-
-@media (max-width: 700px){
-    .about-content{
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-#modal-overlay{
+#modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
-
-    
     display: flex;
     justify-content: center;
     align-items: center;
-
-    z-index: 2000; 
-    cursor: pointer; 
+    z-index: 2000;
+    cursor: pointer;
 }
 
-
-#modal-overlay.modal-hidden{
+#modal-overlay.modal-hidden {
     display: none;
 }
 
-
-#modal-image{
+#modal-image {
     max-width: 80%;
     max-height: 80%;
     border: 3px solid white;
     border-radius: 5px;
 }
-
 
 .projeto-card {
     border: 1px solid #ddd;
@@ -195,8 +166,8 @@ form button[type="submit"]:hover{
 }
 
 .projeto-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .projeto-card h3 {
@@ -219,14 +190,27 @@ form button[type="submit"]:hover{
 }
 
 .btn-demo {
-    background-color: #28a745; 
+    background-color: #28a745;
     color: white;
 }
 
 .btn-code {
-    background-color: #333; 
+    background-color: #333;
     color: white;
 }
 
-.btn-demo:hover { background-color: #218838; }
-.btn-code:hover { background-color: #000; }
+.btn-demo:hover {
+    background-color: #218838;
+}
+
+.btn-code:hover {
+    background-color: #000;
+}
+
+@media (max-width: 700px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
